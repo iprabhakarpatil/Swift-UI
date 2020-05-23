@@ -31,21 +31,13 @@ struct ContentView: View {
                 }
                 
             }
-            Button(action: {
-                self.whoIsThereVisible = true
-                print("Knock knock tapped")
-            }) {
-                Text("Knock Knock")
-            }
-            .alert(isPresented: $whoIsThereVisible) { () -> Alert in
-                return Alert(title: Text("Knock Knock"), message: Text("Pizza delivery here"), dismissButton: .default(Text("OK")))
-            }
+
         }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView().previewLayout(.fixed(width: 896, height: 414))
     }
 }
